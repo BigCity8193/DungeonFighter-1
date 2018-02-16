@@ -43,7 +43,7 @@ Time Player::getLastTime()
 
 bool Player::hit(Time timeHit) 
 {
-	if (timeHit.asMilliseconds() - m_LastHit.asMilliseconds > 200)
+	if (timeHit.asMilliseconds() - m_LastHit.asMilliseconds() > 200)
 	{
 		m_LastHit = timeHit;
 		m_Health -= 10;
@@ -180,9 +180,4 @@ void Player::increaseHealthLevel(int amount)
 	{
 		m_Health = m_MaxHealth;
 	}
-}
-
-int Player::getHealth()
-{
-	return m_Health;
 }
